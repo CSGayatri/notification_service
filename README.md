@@ -31,9 +31,9 @@ A Node.js-based notification service that supports sending Email, SMS, and In-Ap
 ## Install dependencies:
 npm install
 ## Create a .env file in the root directory and add your configuration variables:
-PORT=3000
-MONGO_URI=mongodb://localhost:27017/notifications
-RABBITMQ_URL=amqp://localhost
+- PORT=3000
+- MONGO_URI=mongodb://localhost:27017/notifications
+- RABBITMQ_URL=amqp://localhost
 
 ## Start the server:
 npm start
@@ -64,17 +64,17 @@ Method: GET
 Description: Retrieves all notifications for a given user.
 
 ## Assumptions
--Notification content schema depends on the notification type.
--RabbitMQ and MongoDB are running and accessible via the URLs provided in .env.
--Retry delays are managed by RabbitMQ using delayed queues.
--No authentication/authorization is implemented.
+- Notification content schema depends on the notification type.
+- RabbitMQ and MongoDB are running and accessible via the URLs provided in .env.
+- Retry delays are managed by RabbitMQ using delayed queues.
+- No authentication/authorization is implemented.
 
 ## Future Improvements
--Add authentication to API endpoints.
--Support pagination and filtering on user notifications endpoint.
--Add more notification channels.
--Add unit and integration tests.
--Dockerize the app and infrastructure.
+- Add authentication to API endpoints.
+- Support pagination and filtering on user notifications endpoint.
+- Add more notification channels.
+- Add unit and integration tests.
+- Dockerize the app and infrastructure.
 
 ## License
 This project is licensed under the MIT License.
