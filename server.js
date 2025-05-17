@@ -18,7 +18,12 @@ const swaggerOptions = {
       version: '1.0.0',
       description: 'API for sending and retrieving notifications',
     },
-    servers: [{ url: 'http://localhost:3000' }],
+    // Optional: set dynamic URL from env or fallback to relative
+    servers: [
+      {
+        url: process.env.SWAGGER_SERVER_URL || '',
+      },
+    ],
   },
   apis: ['./src/routes/*.js'],
 };
@@ -28,10 +33,16 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 const PORT = process.env.PORT || 3000;
 
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}).then(() => {
-  console.log('Connected to MongoDB');
-  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-}).catch(err => console.error('MongoDB connection error:', err));
+// Connect to MongoDB and start server
+mongoose
+  .connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log('Connected to MongoDB');
+    app.listen(PORT, () =>
+      console.log(`Server running on port ${PORT}`)
+    );
+  })
+  .catch((err) => console.error('MongoDB connection error:', err));
