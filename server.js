@@ -9,6 +9,11 @@ const app = express();
 app.use(express.json());
 app.use('/api', routes);
 
+// ✅ Health check route (Render will ping this to verify your app is alive)
+app.get('/healthz', (req, res) => {
+  res.status(200).send('OK');
+});
+
 // Swagger setup
 const swaggerOptions = {
   swaggerDefinition: {
@@ -18,7 +23,6 @@ const swaggerOptions = {
       version: '1.0.0',
       description: 'API for sending and retrieving notifications',
     },
-    // Optional: set dynamic URL from env or fallback to relative
     servers: [
       {
         url: process.env.SWAGGER_SERVER_URL || '',
