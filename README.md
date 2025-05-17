@@ -63,18 +63,6 @@ Method: GET
 
 Description: Retrieves all notifications for a given user.
 
-## Project Structure
-├── src
-│   ├── controllers
-│   ├── models
-│   ├── queues
-│   ├── routes
-│   ├── senders
-│   └── ...
-├── .env
-├── package.json
-├── README.md
-└── server.js (or app.js)
 ## Assumptions
 -Notification content schema depends on the notification type.
 -RabbitMQ and MongoDB are running and accessible via the URLs provided in .env.
