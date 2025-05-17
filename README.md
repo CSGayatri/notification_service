@@ -1,5 +1,3 @@
-## Deployed link: 
-https://notification-service-xw5i.onrender.com/api-docs
 ## Notification_Service
 A Node.js-based notification service that supports sending Email, SMS, and In-App notifications using a RabbitMQ queue for asynchronous processing with retry capabilities.
 
@@ -36,6 +34,17 @@ npm install
 - PORT=3000
 - MONGO_URI=mongodb://localhost:27017/notifications
 - RABBITMQ_URL=amqp://localhost
+
+ ✅ Swagger UI:
+👉 https://notification-service-xw5i.onrender.com/api-docs
+(Should load the Swagger interface)
+
+✅ Health Check (required by Render):
+👉 https://notification-service-xw5i.onrender.com/healthz
+Should return: OK
+
+✅ Test an actual API route (e.g., /api/send, /api/notifications)
+You’ll need to know the route names defined in your ./src/routes/ folder.
 
 ## Start the server:
 npm start
