@@ -1,3 +1,5 @@
+## Deployed link: 
+https://notification-service-xw5i.onrender.com/api-docs
 ## Notification_Service
 A Node.js-based notification service that supports sending Email, SMS, and In-App notifications using a RabbitMQ queue for asynchronous processing with retry capabilities.
 
